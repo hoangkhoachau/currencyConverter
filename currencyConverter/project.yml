@@ -1,0 +1,57 @@
+name: "CurrencyConverter"
+options:
+  bundleIdPrefix: com.hoangkhoachau
+  deploymentTarget:
+    iOS: '17.0'
+
+packages:
+  Inject:
+    url: https://github.com/krzysztofzablocki/Inject.git
+    from: 1.5.2
+targets:
+  CurrencyConverter:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    resources: [Resources]
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.hoangkhoachau.CurrencyConverter"
+      ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS: YES
+      SWIFT_VERSION: '5.0' # Update to the version you're using
+      OTHER_LDFLAGS: 
+        - "-Xlinker"
+        - "-interposable"
+    info:
+      path: Sources/Info.plist
+      properties:
+        UILaunchScreen: ""
+        UIApplicationSupportsIndirectInputEvents: YES
+        UIApplicationSceneManifest: 
+          UIApplicationSupportsMultipleScenes: YES
+        UISupportedInterfaceOrientations~iphone:
+          [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad:
+          [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]    
+    dependencies:
+    - package: Inject
+
+configurations:
+  Debug:
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Onone'
+      ENABLE_PREVIEWS: YES
+  Release:
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Owholemodule'
+
+schemes:
+  CurrencyConverter:
+    build:
+      targets:
+        CurrencyConverter: all
+    run:
+      config: Debug
+      environmentVariables:
+        INJECTION_STANDALONE: VALUE
+    test:
+      config: Debug

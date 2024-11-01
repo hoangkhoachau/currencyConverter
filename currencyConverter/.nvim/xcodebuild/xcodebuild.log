@@ -1,0 +1,33 @@
+Resolving Package Graph
+Resolved source packages
+Inject - https://github.com/krzysztofzablocki/Inject.git @ 1.5.2
+[!]  --- xcodebuild: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, id:4424EB06-E09F-4FDD-A656-E30CBC405C3B, OS:18.1, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:4424EB06-E09F-4FDD-A656-E30CBC405C3B, OS:18.1, name:iPhone 16 Pro }
+[!]  /Users/hoangkhoa/code/swift/currencyConverter/Sources/Presentation/Home/ViewModels/ViewModel.swift:118:1: extension declares a conformance of imported type 'Int' to imported protocol 'Identifiable'; this will not behave correctly if the owners of 'Swift' introduce this conformance in the future
+extension Int: Identifiable {
+^
+[CurrencyConverter] Compiling ViewModel.swift
+[!]  /Users/hoangkhoa/code/swift/currencyConverter/Sources/Presentation/Home/ViewModels/ViewModel.swift:118:1: extension declares a conformance of imported type 'Int' to imported protocol 'Identifiable'; this will not behave correctly if the owners of 'Swift' introduce this conformance in the future
+extension Int: Identifiable {
+^
+[CurrencyConverter] Compiling CurrenciesView.swift
+[CurrencyConverter] Copy arm64-apple-ios-simulator.swiftsourceinfo -> CurrencyConverter.swiftsourceinfo
+[CurrencyConverter] Copy arm64-apple-ios-simulator.abi.json -> CurrencyConverter.abi.json
+Signing CurrencyConverter.debug.dylib (in target 'CurrencyConverter' from project 'CurrencyConverter')
+Signing __preview.dylib (in target 'CurrencyConverter' from project 'CurrencyConverter')
+Signing CurrencyConverter.app (in target 'CurrencyConverter' from project 'CurrencyConverter')
+Build Succeeded
+
+-----------------------------
+-- xcodebuild.nvim summary --
+-----------------------------
+
+Warnings:
+   /Users/hoangkhoa/code/swift/currencyConverter/Sources/Presentation/Home/ViewModels/ViewModel.swift:118:1
+    extension declares a conformance of imported type 'Int' to imported protocol 'Identifiable'; this will not behave correctly if the owners of 'Swift' introduce this conformance in the future
+    extension Int: Identifiable {
+    ^
+
+  ✔ Build Succeeded
+
